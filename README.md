@@ -11,69 +11,56 @@ The visualization of the detected keypoints confirm that the features were well 
 **Keypoints for Given Images:**
 
 SIFT 1  
-![A street with trees and buildingsDescription automatically generated][image1]  
-![][image2]
+![A street with trees and buildingsDescription automatically generated][output/SIFT1.jpg] 
 
 SIFT 2  
-![A building with trees and a streetDescription automatically generated][image3]  
-![][image4]
+![A building with trees and a streetDescription automatically generated][output/SIFT2.jpg] 
 
 SIFT 3  
-![A building with a sign on itDescription automatically generated][image5]  
-![][image6]
+![A building with a sign on itDescription automatically generated][output/SIFT3.jpg]  
 
 **Feature Matching (Before RANSAC)**  
 After detecting the SIFT keypoints, a brute-force matcher (BFMatcher) was used to identify corresponding keypoints between image pairs. The matching process was conducted using the descriptors from the SIFT detector, which ensures robust comparisons based on local image patches.
 
 **Number of matches found (before RANSAC):**
 
-![][image7]
-
-![][image8]
-
 The top 10 matches between each pair were visualized, highlighting strong correspondences between overlapping features in the images.
 
 Top 10 Matches 2 and 1  
-![A street with trees and buildingsDescription automatically generated][image9]
+![A street with trees and buildingsDescription automatically generated][output/Theop10_21.jpg]
 
 Top 10 Matches 3 and 2  
-![A street with trees and buildingsDescription automatically generated][image10]
+![A street with trees and buildingsDescription automatically generated][output/Top10_32.jpg]
 
 **Homography Estimation and Inliers**  
 To refine the matches, RANSAC was applied to estimate the homography matrix, which allows the transformation of one image into the plane of another. This process filters out outlier matches that do not correspond to a global geometric transformation.
 
 **Inlier matches (after RANSAC)** 
 
-![][image11]
-
-![][image12]
-
 The top 10 inlier matches between each pair were visualized.
 
 Top 10 Inliers 2 and 1  
-![A street with trees and buildingsDescription automatically generated][image13]
+![A street with trees and buildingsDescription automatically generated][output/Top10_inliers_21.jpg]
 
 Top 10 Inliers 3 and 2  
-![A street with trees and buildingsDescription automatically generated][image14]
+![A street with trees and buildingsDescription automatically generated][output/Top10_inliers_32.jpg]
 
 The resulting homography matrices are essential for transforming the images during stitching. Below are the computed homography matrices for Image pairs 21, 32 and Cumulative:
-
-![A screenshot of a computerDescription automatically generated][image15]
 
 **Panorama Generation and Image Transformation**  
 Using the homography matrices, the images were warped and transformed into a common plane, creating a panorama. The final transformation aligns the overlapping areas, and the images are stitched together to form a cohesive result.
 
 Warped Image 1  
-![A building with trees and a crosswalkDescription automatically generated][image16]
+![A building with trees and a crosswalkDescription automatically generated][output/warped_img1.jpg]
 
 Warped Image 2  
-![A building on the streetDescription automatically generated][image17]
+![A building on the streetDescription automatically generated][output/warped_img2.jpg]
 
 Warped Image 3  
-![A street with trees and buildingsDescription automatically generated][image18]
+![A street with trees and buildingsDescription automatically generated][output/warped_img3.jpg]
 
 Panorama  
-![A street with trees and buildingsDescription automatically generated][image19]
+![A street with trees and buildingsDescription automatically generated][output/panorama.jpg]
 
 **Conclusions and Reflections**  
 The combination of SIFT-based feature detection and matching, along with RANSAC-based homography estimation, worked effectively to stitch the images into a panorama. SIFT's robustness allowed for reliable keypoint detection, even with variations in scale and rotation, while RANSAC helped eliminate incorrect matches. A good alignment of the panorama image largely depended on accurate feature detection in the overlapping regions.
@@ -86,60 +73,11 @@ The combination of SIFT-based feature detection and matching, along with RANSAC-
 * The reduction in matches after RANSAC is expected as this step removes outliers that do not correspond to the estimated geometric transformation.  
 * The quality of the final panorama is largely dependent on the accuracy of the homography estimation. In this case, the stitched output demonstrates successful alignment, especially in regions with significant overlap. Minor seams or misalignments are still present, particularly in areas with fewer features or where distortion occurs due to perspective changes.
 
-**Images from own camera and results:**
-
-**Input Images:**
-
-Image 1  
-![A room with several machinesDescription automatically generated][image20]
-
-Image 2  
-![A room with several appliancesDescription automatically generated][image21]
-
-Image 3  
-![A group of computers on a counterDescription automatically generated][image22]
 
 **Results:**
 
-SIFT 1  
-![A room with several machinesDescription automatically generated][image23]  
-![][image24]
+Panorama 1
+![A large window with a few machinesDescription automatically generated with medium confidence][output/my_panorama.jpg]  
 
-SIFT2  
-![A room with several machinesDescription automatically generated][image25]  
-![][image26]
-
-SIFT3  
-![A room with several large computersDescription automatically generated with medium confidence][image27]  
-![][image28]
-
-Top 10 Matches 2 and 1  
-![A collage of a room with a few machinesDescription automatically generated][image29]  
-![A black background with white textDescription automatically generated][image30]
-
-Top 10 Matches 3 and 2  
-![A room with a large windowDescription automatically generated][image31]  
-![A black background with white textDescription automatically generated][image32]
-
-Top 10 Inliers 2 and 1  
-![A collage of several machinesDescription automatically generated][image33]  
-![][image34]
-
-Top 10 Inliers 3 and 2  
-![A room with a large windowDescription automatically generated][image35]  
-![][image36]
-
-Homography Matrices  
-![A screenshot of a computerDescription automatically generated][image37]
-
-Warped Image 1  
-![A room with a black backgroundDescription automatically generated][image38]
-
-Warped Image 2  
-![A room with a few machinesDescription automatically generated with medium confidence][image39]
-
-Warped Image 3  
-![A row of machines on a counterDescription automatically generated][image40]
-
-Panorama  
-![A large window with a few machinesDescription automatically generated with medium confidence][image41]  
+Panorama 2
+![A large window with a few machinesDescription automatically generated with medium confidence][output/my_panorama_new.jpg]  
