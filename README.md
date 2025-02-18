@@ -27,7 +27,7 @@ After detecting the SIFT keypoints, a brute-force matcher (BFMatcher) was used t
 The top 10 matches between each pair were visualized, highlighting strong correspondences between overlapping features in the images.
 
 Top 10 Matches 2 and 1  
-![A street with trees and buildingsDescription automatically generated](output/Theop10_21.jpg)
+![A street with trees and buildingsDescription automatically generated](output/Top10_21.jpg)
 
 Top 10 Matches 3 and 2  
 ![A street with trees and buildingsDescription automatically generated](output/Top10_32.jpg)
