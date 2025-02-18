@@ -77,7 +77,7 @@ The combination of SIFT-based feature detection and matching, along with RANSAC-
 **Results:**
 
 Panorama 1
-![A large window with a few machinesDescription automatically generated with medium confidence][output/my_panorama.jpg]  
+![A large window with a few machinesDescription automatically generated with medium confidence][Panorama-Stitching/output/my_panorama.jpg]  
 
 Panorama 2
 ![A large window with a few machinesDescription automatically generated with medium confidence][output/my_panorama_new.jpg]  
