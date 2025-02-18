@@ -11,13 +11,13 @@ The visualization of the detected keypoints confirm that the features were well 
 **Keypoints for Given Images:**
 
 SIFT 1  
-![A street with trees and buildingsDescription automatically generated][output/SIFT1.jpg] 
+![A street with trees and buildingsDescription automatically generated](output/SIFT1.jpg) 
 
 SIFT 2  
-![A building with trees and a streetDescription automatically generated][output/SIFT2.jpg] 
+![A building with trees and a streetDescription automatically generated](output/SIFT2.jpg)
 
 SIFT 3  
-![A building with a sign on itDescription automatically generated][output/SIFT3.jpg]  
+![A building with a sign on itDescription automatically generated](output/SIFT3.jpg)  
 
 **Feature Matching (Before RANSAC)**  
 After detecting the SIFT keypoints, a brute-force matcher (BFMatcher) was used to identify corresponding keypoints between image pairs. The matching process was conducted using the descriptors from the SIFT detector, which ensures robust comparisons based on local image patches.
@@ -27,10 +27,10 @@ After detecting the SIFT keypoints, a brute-force matcher (BFMatcher) was used t
 The top 10 matches between each pair were visualized, highlighting strong correspondences between overlapping features in the images.
 
 Top 10 Matches 2 and 1  
-![A street with trees and buildingsDescription automatically generated][output/Theop10_21.jpg]
+![A street with trees and buildingsDescription automatically generated](output/Theop10_21.jpg)
 
 Top 10 Matches 3 and 2  
-![A street with trees and buildingsDescription automatically generated][output/Top10_32.jpg]
+![A street with trees and buildingsDescription automatically generated](output/Top10_32.jpg)
 
 **Homography Estimation and Inliers**  
 To refine the matches, RANSAC was applied to estimate the homography matrix, which allows the transformation of one image into the plane of another. This process filters out outlier matches that do not correspond to a global geometric transformation.
@@ -40,10 +40,10 @@ To refine the matches, RANSAC was applied to estimate the homography matrix, whi
 The top 10 inlier matches between each pair were visualized.
 
 Top 10 Inliers 2 and 1  
-![A street with trees and buildingsDescription automatically generated][output/Top10_inliers_21.jpg]
+![A street with trees and buildingsDescription automatically generated](output/Top10_inliers_21.jpg)
 
 Top 10 Inliers 3 and 2  
-![A street with trees and buildingsDescription automatically generated][output/Top10_inliers_32.jpg]
+![A street with trees and buildingsDescription automatically generated](output/Top10_inliers_32.jpg)
 
 The resulting homography matrices are essential for transforming the images during stitching. Below are the computed homography matrices for Image pairs 21, 32 and Cumulative:
 
@@ -51,16 +51,16 @@ The resulting homography matrices are essential for transforming the images duri
 Using the homography matrices, the images were warped and transformed into a common plane, creating a panorama. The final transformation aligns the overlapping areas, and the images are stitched together to form a cohesive result.
 
 Warped Image 1  
-![A building with trees and a crosswalkDescription automatically generated][output/warped_img1.jpg]
+![A building with trees and a crosswalkDescription automatically generated](output/warped_img1.jpg)
 
 Warped Image 2  
-![A building on the streetDescription automatically generated][output/warped_img2.jpg]
+![A building on the streetDescription automatically generated](output/warped_img2.jpg)
 
 Warped Image 3  
-![A street with trees and buildingsDescription automatically generated][output/warped_img3.jpg]
+![A street with trees and buildingsDescription automatically generated](output/warped_img3.jpg)
 
 Panorama  
-![A street with trees and buildingsDescription automatically generated][output/panorama.jpg]
+![A street with trees and buildingsDescription automatically generated](output/panorama.jpg)
 
 **Conclusions and Reflections**  
 The combination of SIFT-based feature detection and matching, along with RANSAC-based homography estimation, worked effectively to stitch the images into a panorama. SIFT's robustness allowed for reliable keypoint detection, even with variations in scale and rotation, while RANSAC helped eliminate incorrect matches. A good alignment of the panorama image largely depended on accurate feature detection in the overlapping regions.
@@ -77,7 +77,7 @@ The combination of SIFT-based feature detection and matching, along with RANSAC-
 **Results:**
 
 Panorama 1
-![A large window with a few machinesDescription automatically generated with medium confidence][Panorama-Stitching/output/my_panorama.jpg]  
+![A large window with a few machinesDescription automatically generated with medium confidence](output/my_panorama.jpg)  
 
 Panorama 2
-![A large window with a few machinesDescription automatically generated with medium confidence][output/my_panorama_new.jpg]  
+![A large window with a few machinesDescription automatically generated with medium confidence](output/my_panorama_new.jpg)
